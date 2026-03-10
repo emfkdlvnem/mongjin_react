@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./animations.css";
+@import "./scrollbars.css";
+
+@theme {
+  /* ------------------------------------------------ */
+  /* --------------- 통합페이지 COLOR --------------- */
+  /* ------------------------------------------------ */
+
+  /* gray */
+  --color-main-gray-800: #2b2b2b;
+  --color-main-gray-700: #333;
+  --color-main-gray-600: #555;
+  --color-main-gray-500: #8c9197;
+  --color-main-gray-400: #b7b7b7;
+  --color-main-gray-300: #ddd;
+  --color-main-gray-200: #eee;
+  --color-main-gray-100: #f7f7f7;
+  /* primary */
+  --color-main-primary-100: #a80006;
+  --color-main-primary-80: #b62a2f;
+  --color-main-primary-60: #d94a4f;
+  --color-main-primary-40: #ffc3c3;
+  --color-main-primary-20: #fbeaea;
+  /* sub */
+  --color-main-sub-700: #4558b8;
+  --color-main-sub-600: #6679d9;
+  --color-main-sub-500: #8293eb;
+  --color-main-sub-400: #e5e9ff;
+  --color-main-sub-300: #e8edf3;
+  --color-main-sub-200: #eef1f6;
+  --color-main-sub-100: #f6f8ff;
+  /* label */
+  --color-main-label-1: #ffc8c9;
+  --color-main-label-2: #d4e4ff;
+  --color-main-label-3: #fff1c6;
+  --color-main-label-4: #ffea84;
+  /* curriculum */
+  --color-main-curriculum-immersion-300: #e3433f;
+  --color-main-curriculum-immersion-200: #ff706c;
+  --color-main-curriculum-immersion-100: #ffefef;
+  --color-main-curriculum-intensive-300: #1c5dc5;
+  --color-main-curriculum-intensive-200: #578adc;
+  --color-main-curriculum-intensive-100: #eafbff;
+  --color-main-curriculum-achievement-300: #008243;
+  --color-main-curriculum-achievement-200: #17b47d;
+  --color-main-curriculum-achievement-100: #eafcd1;
+  --color-main-curriculum-rb: #f7921d;
+  --color-main-curriculum-sap: #d94a4f;
+  --color-main-curriculum-asn: #a80006;
+  --color-main-curriculum-aj: #54bdd9;
+  --color-main-curriculum-eip: #3771cf;
+  --color-main-curriculum-jip: #b5c427;
+  --color-main-curriculum-mip: #478500;
+  --color-main-curriculum-alpha-300: #004d6a;
+  --color-main-curriculum-alpha-200: #00adef;
+  --color-main-curriculum-alpha-100: #b3e6fa;
+  --color-main-curriculum-sigma-300: #005d58;
+  --color-main-curriculum-sigma-200: #00a79d;
+  --color-main-curriculum-sigma-100: #b3e5e2;
+  --color-main-curriculum-nu-300: #00680e;
+  --color-main-curriculum-nu-200: #3ab54a;
+  --color-main-curriculum-nu-100: #c4e9c9;
+  /* yellow */
+  --color-main-yellow-400: #fff12c;
+  --color-main-yellow-300: #f1ff62;
+  --color-main-yellow-200: #fdfaf2;
+  --color-main-yellow-100: #fffdf8;
+  /* purple */
+  --color-main-purple-900: #8e1bda;
+  --color-main-purple-800: #965abe;
+  --color-main-purple-700: #8d6dff;
+  --color-main-purple-600: #bf89fa;
+  --color-main-purple-500: #c997e4;
+  --color-main-purple-400: #e3e3ff;
+  --color-main-purple-300: #ece4f8;
+  --color-main-purple-200: #f5eeff;
+  --color-main-purple-100: #f9f5ff;
+  /* orange */
+  --color-main-orange-500: #f53e0b;
+  --color-main-orange-400: #dc5400;
+  --color-main-orange-300: #ff8929;
+  --color-main-orange-200: #f5a20b;
+  --color-main-orange-100: #ff9e3c;
+  /* green */
+  --color-main-green-900: #0b5c68;
+  --color-main-green-800: #008e77;
+  --color-main-green-700: #009f3a;
+  --color-main-green-600: #66a42f;
+  --color-main-green-500: #b4c518;
+  --color-main-green-400: #e4f3c5;
+  --color-main-green-300: #edf9d5;
+  --color-main-green-200: #f3fddf;
+  --color-main-green-100: #f8ffea;
+  /* blue */
+  --color-main-blue-900: #060761;
+  --color-main-blue-800: #0021a9;
+  --color-main-blue-700: #3450c2;
+  --color-main-blue-600: #3f61e9;
+  --color-main-blue-500: #0a70ec;
+  --color-main-blue-400: #6b8ef1;
+  --color-main-blue-300: #9fb0f4;
+  --color-main-blue-200: #e5e8fa;
+  --color-main-blue-100: #edeffb;
+  /* red */
+  --color-main-red-500: #d5153e;
+  --color-main-red-400: #e73947;
+  --color-main-red-300: #de4566;
+  --color-main-red-200: #f35d74;
+  --color-main-red-100: #ff848e;
+
+  /* ----------------------------------------- */
+  /* --------------- EDU COLOR --------------- */
+  /* ----------------------------------------- */
+
+  /* gray */
+  --color-edu-gray-800: #111;
+  --color-edu-gray-700: #333;
+  --color-edu-gray-600: #555;
+  --color-edu-gray-500: #999;
+  --color-edu-gray-400: #aaa;
+  --color-edu-gray-300: #ddd;
+  --color-edu-gray-200: #eee;
+  /* primary */
+  --color-edu-primary-100: #a80006;
+  --color-edu-primary-80: #b62a2f;
+  --color-edu-primary-60: #d94a4f;
+  --color-edu-primary-40: #ffc3c3;
+  --color-edu-primary-20: #fbeaea;
+  /* secondary navy */
+  --color-edu-secondary-navy-100: #0a1e3f;
+  --color-edu-secondary-navy-80: #1c3f7a;
+  --color-edu-secondary-navy-60: #3673dd;
+  --color-edu-secondary-navy-40: #7aa9fd;
+  --color-edu-secondary-navy-20: #eef1f6;
+  /* secondary blue */
+  --color-edu-secondary-blue-100: #0099c2;
+  --color-edu-secondary-blue-80: #24b5dc;
+  --color-edu-secondary-blue-60: #6bcde7;
+  --color-edu-secondary-blue-40: #c1f2ff;
+  --color-edu-secondary-blue-20: #effcff;
+  /* secondary teal */
+  --color-edu-secondary-teal-100: #008e77;
+  --color-edu-secondary-teal-80: #29bda5;
+  --color-edu-secondary-teal-60: #57d2be;
+  --color-edu-secondary-teal-40: #a5f1e5;
+  --color-edu-secondary-teal-20: #e3fffa;
+  /* secondary green */
+  --color-edu-secondary-green-100: #859a00;
+  --color-edu-secondary-green-80: #9cb400;
+  --color-edu-secondary-green-60: #b5c427;
+  --color-edu-secondary-green-40: #e3eb92;
+  --color-edu-secondary-green-20: #fcffe4;
+  /* secondary yellow */
+  --color-edu-secondary-yellow-100: #ffaa00;
+  --color-edu-secondary-yellow-80: #ffc300;
+  --color-edu-secondary-yellow-60: #ffda61;
+  --color-edu-secondary-yellow-40: #ffeeb7;
+  --color-edu-secondary-yellow-20: #fffdf6;
+  /* secondary orange */
+  --color-edu-secondary-orange-100: #ff6a00;
+  --color-edu-secondary-orange-80: #ff8900;
+  --color-edu-secondary-orange-60: #ff9d2b;
+  --color-edu-secondary-orange-40: #ffce96;
+  --color-edu-secondary-orange-20: #fff3e4;
+  /* secondary purple */
+  --color-edu-secondary-purple-100: #3b38f0;
+  --color-edu-secondary-purple-80: #6d6be7;
+  --color-edu-secondary-purple-60: #9391fb;
+  --color-edu-secondary-purple-40: #bab9ff;
+  --color-edu-secondary-purple-20: #e8e7ff;
+  /* system */
+  --color-edu-system-positive: #00c853;
+  --color-edu-system-warning: #fbc02d;
+  --color-edu-system-negative: #d32f2f;
+  --color-edu-system-information: #096ab3;
+  /* bg_light */
+  --color-edu-bg_light-10: #eff7ff;
+  --color-edu-bg_light-20: #f8f8f9;
+  --color-edu-bg_light-30: #f7f7fb;
+  --color-edu-bg_light-40: #f1f1f5;
+}
+
+@layer base {
+  :root {
+    font-family:
+      "nanumSquareRound", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: var(--font-color-black);
+    background-color: #ffffff;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: "nanumSquareRound";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-use-select: none;
+    user-select: none;
+    overflow-x: hidden;
+  }
+
+  body,
+  input,
+  button,
+  textarea,
+  select {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus {
+    outline: none;
+  }
+  body.a11y-focus :focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+
+  table {
+    border-spacing: 0;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .mo-view {
+      display: flex !important;
+    }
+    .pc-view {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .pc-view {
+      display: flex !important;
+    }
+    .mo-view {
+      display: none !important;
+    }
+  }
+}
