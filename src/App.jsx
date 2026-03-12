@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 
 // page
-import Header from "./assets/layouts/Header.jsx";
+import Header from "./components/layout/Header/Header.jsx";
 
 // start App()
 function App() {
