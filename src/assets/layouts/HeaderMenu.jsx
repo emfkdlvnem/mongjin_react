@@ -14,10 +14,9 @@ const HeaderMenu = ({ menuOpen, setMenuOpen }) => {
         className={`absolute left-0 top-full w-full bg-white transition-all duration-300 overflow-hidden
                     ${menuOpen ? "max-h-[400px]" : "max-h-0"}`}
       >
-        {" "}
-        <div className="flex flex-col items-center gap-6 py-10 text-black">
+        <div className="flex justify-center gap-6 py-10 text-black">
           {/* Brand Story */}
-          <div>
+          <div className="flex flex-col items-center gap-4">
             <Link to="/about">Brand Story</Link>
             <Link to="/about/philosophy">Philosophy</Link>
             <Link to="/about/proud">Proud of Sogang</Link>
@@ -25,7 +24,7 @@ const HeaderMenu = ({ menuOpen, setMenuOpen }) => {
           </div>
 
           {/* Curriculum */}
-          <div>
+          <div className="flex flex-col items-center gap-4">
             <Link to="/curriculum">Curriculum</Link>
             <Link to="/curriculum/loadmap">커리큘럼 로드맵</Link>
             <Link to="/curriculum/program">SLP 프로그램</Link>
@@ -38,7 +37,7 @@ const HeaderMenu = ({ menuOpen, setMenuOpen }) => {
           </div>
 
           {/* 입학안내 */}
-          <div>
+          <div className="flex flex-col items-center gap-4">
             <Link to="/admission">입학 안내</Link>
             <Link to="/admission/procedure">입학 절차</Link>
             <Link to="/admission/consultation">상담예약</Link>

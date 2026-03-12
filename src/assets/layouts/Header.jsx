@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 // page 연결 (위치 임시)
-import HeaderNav from "./HeaderNav"; // 전체 메뉴바
+import HeaderNav from "./HeaderNav"; // 1 depth 메뉴
+import HeaderSubNav from "./HeaderSubNav"; // 2 depth 메뉴
 import HeaderMenu from "./HeaderMenu"; // 전체 메뉴 오픈
 
 // image (위치 임시))
@@ -12,25 +13,27 @@ import snsImage2 from "../images/instagram.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // 전체 메뉴 오픈
-  const location = useLocation();
+  const [subOpen, setSubOpen] = useState(null); // 2 depth 메뉴 오픈
+  // const location = useLocation();
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
+  // useEffect(() => {
+  //   setMenuOpen(false);
+  // }, [location]);
 
   return (
     <div
       className="relative"
       onMouseLeave={() => {
         setMenuOpen(false);
+        setSubOpen(null);
       }}
     >
       <header className="bg-white">
         {/* 상단 nav bar */}
-        <div className="border-b border-[#F7F7F7]">
-          <div className="max-w-[1280px] mx-auto flex items-center justify-end gap-[40px] h-[40px] border-amber-200">
+        <div className="border-b border-[var(--color-main-gray-100)]">
+          <div className="max-w-[1280px] mx-auto flex items-center justify-end gap-[40px] h-[40px]">
             {/* Login / Join */}
-            <div className="flex items-center gap-[16px] text-[14px] font-bold">
+            <div className="flex items-center gap-[16px] text-nanum-caption-1_2">
               <Link to="/login">로그인</Link>
               <Link to="/join">회원가입</Link>
             </div>
@@ -54,9 +57,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-
         {/* ========================================================== */}
-
         {/* 하단 nav bar */}
         <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[80px]">
           {/* Main Logo */}
@@ -70,8 +71,8 @@ const Header = () => {
             </Link>
           </h1>
 
-          {/* nav bar */}
-          <HeaderNav />
+          {/* 1 depth 메뉴 */}
+          <HeaderNav setSubOpen={setSubOpen} />
 
           {/* 전체 메뉴 버튼 */}
           <button
@@ -88,6 +89,9 @@ const Header = () => {
 
       {/* 전체 메뉴 Open > HeaderMenu.jsx */}
       <HeaderMenu menuOpen={menuOpen} />
+
+      {/* 2depth 메뉴 Open > HeaderSubNav.jsx */}
+      <HeaderSubNav subOpen={subOpen} />
     </div>
   );
 };
