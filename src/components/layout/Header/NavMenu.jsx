@@ -1,18 +1,19 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // import { navData } from "@/data/navData";
-import NavItem from "./NavItem";
+// import NavItem from './NavItem';
 
 // image
-import logoImage from "@/assets/images/logo.png";
+import logoImage from '@/assets/images/logo.png';
 
 const NavMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [subOpen, setSubOpen] = useState(null);
 
   return (
     <div className="relative">
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[80px]">
+      <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[80px]" onMouseLeave={() => setSubOpen(null)}>
         {/* Main Logo */}
         <h1>
           <Link to="/">
@@ -26,42 +27,27 @@ const NavMenu = () => {
             className="flex items-center gap-[20px] 
                "
           >
-            <li
-              className="w-[180px] h-[80px] flex items-center justify-center shrink-0"
-              onMouseEnter={() => setSubOpen("about")}
-            >
+            <li className="w-[180px] h-[80px] flex items-center justify-center shrink-0" onMouseEnter={() => setSubOpen('about')}>
               <p className="text-nanum-body-4_2 cursor-pointer hover:text-[var(--color-main-primary-100)] hover:font-extrabold">
                 Brand Story
               </p>
             </li>
-            <li
-              className="w-[180px] h-[80px] flex items-center justify-center shrink-0"
-              onMouseEnter={() => setSubOpen("curriculum")}
-            >
+            <li className="w-[180px] h-[80px] flex items-center justify-center shrink-0" onMouseEnter={() => setSubOpen('curriculum')}>
               <p className="text-nanum-body-4_2 cursor-pointer hover:text-[var(--color-main-primary-100)] hover:font-extrabold">
                 Curriculum
               </p>
             </li>
-            <li
-              className="w-[180px] h-[80px] flex items-center justify-center shrink-0"
-              onMouseEnter={() => setSubOpen(null)}
-            >
+            <li className="w-[180px] h-[80px] flex items-center justify-center shrink-0" onMouseEnter={() => setSubOpen(null)}>
               <p className="text-nanum-body-4_2 cursor-pointer hover:text-[var(--color-main-primary-100)] hover:font-extrabold">
                 학당 찾기
               </p>
             </li>
-            <li
-              className="w-[180px] h-[80px] flex items-center justify-center shrink-0"
-              onMouseEnter={() => setSubOpen("admission")}
-            >
+            <li className="w-[180px] h-[80px] flex items-center justify-center shrink-0" onMouseEnter={() => setSubOpen('admission')}>
               <p className="text-nanum-body-4_2 cursor-pointer hover:text-[var(--color-main-primary-100)] hover:font-extrabold">
                 입학 안내
               </p>
             </li>
-            <li
-              className="w-[180px] h-[80px] flex items-center justify-center shrink-0"
-              onMouseEnter={() => setSubOpen(null)}
-            >
+            <li className="w-[180px] h-[80px] flex items-center justify-center shrink-0" onMouseEnter={() => setSubOpen(null)}>
               <p className="text-nanum-body-4_2 cursor-pointer hover:text-[var(--color-main-primary-100)] hover:font-extrabold">
                 가맹 문의
               </p>
@@ -70,20 +56,61 @@ const NavMenu = () => {
         </nav>
 
         {/* 햄버거 버튼 */}
-        <button
-          className="text-3xl cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? "✕" : "☰"}
+        <button className="text-3xl w-[35px] cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? '✕' : '☰'}
         </button>
       </div>
 
-      {/* 햄버거 전체 메뉴 */}
+      {/* 2depth 메뉴 */}
+      <div className="absolute left-0 top-[80px] w-full bg-white  transition-all duration-300">
+        <div className="max-w-[1280px] mx-auto h-[200px] flex gap-10 py-6" onMouseLeave={() => setSubOpen(null)}>
+          {subOpen === 'about' && (
+            <div className="w-[180px] flex flex-col text-center">
+              <Link className="w-[180px] h-[56px]" to="/about/philosophy">
+                Philosophy
+              </Link>
+              <Link className="w-[180px] h-[56px]" to="/about/proud">
+                Proud of Sogang
+              </Link>
+              <Link className="w-[180px] h-[56px]" to="/about/news">
+                SLP NEWS
+              </Link>
+            </div>
+          )}
 
+          {subOpen === 'curriculum' && (
+            <div className="w-[180px] flex flex-col text-center">
+              <Link className="w-[180px] h-[56px]" to="/curriculum/loadmap">
+                커리큘럼 로드맵
+              </Link>
+              <Link className="w-[180px] h-[56px]" to="/curriculum/program">
+                SLP 프로그램
+              </Link>
+              <Link className="w-[180px] h-[56px]" to="/curriculum/elearning">
+                이러닝 프로그램
+              </Link>
+            </div>
+          )}
+
+          {subOpen === 'admission' && (
+            <div className="w-[180px] flex flex-col text-center">
+              <Link className="w-[180px] h-[56px]" to="/admission/procedure">
+                입학 절차
+              </Link>
+              <Link className="w-[180px] h-[56px]" to="/admission/consultation">
+                상담예약
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* 햄버거 전체 메뉴 */}
       <div
-        className={`absolute left-0 top-full w-full bg-white shadow-lg z-50
-              transition-all duration-300 ease-in-out overflow-hidden
-              ${menuOpen ? "max-h-[600px]" : "max-h-0"}`}
+        onMouseLeave={() => setMenuOpen(false)}
+        className={`absolute left-0 top-[80px] w-full bg-white 
+        transition-all duration-300 overflow-hidden
+        ${menuOpen ? 'max-h-[600px]' : 'max-h-0'}`}
       >
         <div className="flex justify-center gap-6 py-10 text-black">
           {/* Brand Story */}
