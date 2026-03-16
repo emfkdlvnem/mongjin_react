@@ -1,12 +1,12 @@
-import Button from './Button';
+import Button from "./Button";
 
 export default {
-  title: 'Common/Button',
+  title: "Common/Button",
   component: Button,
 };
 
 export const Default = {
   args: {
-    children: 'Button',
+    children: "Button",
   },
 };
